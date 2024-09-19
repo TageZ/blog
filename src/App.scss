@@ -1,0 +1,47 @@
+#root{
+  width: 100%;
+}
+
+.page{
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+@font-face {
+  font-family: "AnandaBlack";
+  src: url("./assets/AnandaBlackPersonalUseRegular-rg9Rx.ttf") format("truetype");
+}
+
+.navbar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .header-box{
+    width: 100%;
+    font-family: AnandaBlack;
+    .blog-title{
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .links-box{
+    width: 100%;
+    .links{
+      width: 100%;
+      list-style-type: none;
+      padding: 0;
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+
+      .link{
+        margin: 0px 20px;
+      }
+    }
+
+  }
+}
