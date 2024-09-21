@@ -1,5 +1,10 @@
+import Dropdown from 'react-dropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 function Navbar(){
+
+    const options = ['Theology', 'Culture', 'Apologetics'];
 
     return (
         <div className="navbar">
@@ -9,13 +14,20 @@ function Navbar(){
                 </h1>
                 <hr style={{
                     width: '100%',
-                    margin: '1rem 0 0'
+                    margin: '1.5rem 0 0'
                 }}/>
             </div>
             <div className="links-box">
                 <ul className="links">
                     <li className="link">
-                        Topics
+                        <NavDropdown
+                            title="Topic "
+                            menuVariant="light"
+                        >
+                            {options.map((option, i) => (
+                                <NavDropdown.Item href={`/${option}`}>{option}</NavDropdown.Item>
+                            ))}
+                        </NavDropdown>
                     </li>
                     <li className="link">
                         About me
