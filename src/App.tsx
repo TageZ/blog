@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 import './App.scss'
 import Navbar from './Navbar'
 import Blog from './Blog';
+import image from './assets/agnus-dei.png'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +13,12 @@ function App() {
   return (
     <div className='page'>
       <Navbar/>
-      <Blog/>
+      <div style={{
+        display: 'flex',
+      }}>
+        <Blog topic='THEOLOGY' title='Lorem ipsum something something'  image={image} date={new Date('2003-09-17')} featured={false}/>
+        <Blog topic='THEOLOGY' title='Lorem ipsum something something'  image={image} date={new Date('2003-09-17')} featured={false}/>
+      </div>
     </div>
   )
 }

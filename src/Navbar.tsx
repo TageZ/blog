@@ -1,6 +1,4 @@
-import Dropdown from 'react-dropdown';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
 
 function Navbar(){
 

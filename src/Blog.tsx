@@ -1,10 +1,13 @@
-import image from './assets/agnus-dei.png'
 
-function Blog(){
+interface BlogProps{
+    topic: string;
+    title: string;
+    image: string;
+    date: Date;
+    featured: boolean;
+}
 
-    const topic = "THEOLOGY";
-    const title = "Lorem Ipsum Odor Amet, Consectetuer Adipiscing Elit"
-    const date = 'September 17, 2003'
+function Blog({topic, title, image, date, featured}: BlogProps){
 
     return (
         <div className='blog-post'
@@ -49,7 +52,7 @@ function Blog(){
                     marginTop: '20px'
                 }}
             >
-                {date}
+                {date.toUTCString()}
             </span>
         </div>
     )
