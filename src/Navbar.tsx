@@ -54,7 +54,7 @@ function Navbar({ blogs }: NavbarProps) {
     const searchRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
-    const options = ['Theology', 'Culture', 'Apologetics'];
+    const options = ['Theology', 'Culture', 'Code', 'Football', 'Politics', 'History'];
 
     // Get unique tags from blogs
     const allTags = Array.from(new Set(blogs.map(blog => blog.tag)));
@@ -126,7 +126,10 @@ function Navbar({ blogs }: NavbarProps) {
                             menuVariant="light"
                         >
                             {options.map((option, i) => (
-                                <NavDropdown.Item as={Link} to={`/${option}`} key={i}>
+                                <NavDropdown.Item 
+                                    key={i}
+                                    onClick={() => navigate(`/${option}`)}
+                                >
                                     {option}
                                 </NavDropdown.Item>
                             ))}
@@ -135,10 +138,10 @@ function Navbar({ blogs }: NavbarProps) {
                     <li className="link">
                         About
                     </li>
-                    <li className="link">
-                        Request a topic
+                    <li className="link" onClick={() => window.open('https://tagezerby.com', '_blank')}>
+                        Portfolio
                     </li>
-                    <li className="link">
+                    <li className="link" onClick={() => navigate('/contact')}>
                         Contact
                     </li>
                     <li className="link">

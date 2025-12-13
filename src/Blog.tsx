@@ -13,7 +13,7 @@ function Blog({topic, title, image, date, featured, tag}: BlogProps){
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/tag/${tag}`);
+        navigate(`/article/${tag}`);
     };
 
     return (
@@ -32,6 +32,7 @@ function Blog({topic, title, image, date, featured, tag}: BlogProps){
             </h1>
             <span className='blog-date'>
                 {date.toLocaleDateString('en-US', { 
+                    timeZone: 'America/Chicago',
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
