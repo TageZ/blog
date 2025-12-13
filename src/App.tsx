@@ -170,7 +170,6 @@ export function ArticlePage() {
           <img src={articleData.image} alt={articleData.title} className="article-image" />
         </div>
         <div className="article-content">
-          {/* @ts-expect-error - react-markdown v10 type compatibility issue */}
           <ReactMarkdown>{contentMap[articleData.tag] || 'Content coming soon...'}</ReactMarkdown>
         </div>
       </div>
