@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 
 interface BlogProps{
     topic: string;
@@ -5,54 +6,36 @@ interface BlogProps{
     image: string;
     date: Date;
     featured: boolean;
+    tag: string;
 }
 
-function Blog({topic, title, image, date, featured}: BlogProps){
+function Blog({topic, title, image, date, featured, tag}: BlogProps){
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/tag/${tag}`);
+    };
 
     return (
-        <div className='blog-post'
-            style={{
-                border: '2px solid',
-                width: 'fit-content',
-                padding: '20px',
-                margin: '20px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
-                fontFamily: 'inherit'
-            }}
+        <div 
+            className={`blog-post ${featured ? 'featured' : ''}`}
+            onClick={handleClick}
         >
-            <img src={image} style={{width: '300px', marginBottom: '20px'}}/>
-            <h2 className='blog-topic'
-                style={{
-                    width: '300px',
-                    fontSize: '1rem',
-                    color: '#3A6D8C',
-                    fontWeight: 'bold'
-                }}
-            >
+            <div className="blog-image-container">
+                <img src={image} alt={title} className="blog-image"/>
+            </div>
+            <h2 className='blog-topic'>
                 {topic}
             </h2>
-            <h1 className='blog-title'
-                style={{
-                    width: '300px',
-                    fontSize: '1.8rem',
-                    fontWeight: 'bold',
-                }}
-            >
+            <h1 className='blog-title'>
                 {title}
             </h1>
-            
-            <span className='blog-date'
-                style={{
-                    width: '300px',
-                    fontSize: '0.9rem',
-                    color: '#999999',
-                    marginTop: '20px'
-                }}
-            >
-                {date.toUTCString()}
+            <span className='blog-date'>
+                {date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                })}
             </span>
         </div>
     )
