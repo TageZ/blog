@@ -108,7 +108,7 @@ function Navbar({ blogs }: NavbarProps) {
     return (
         <div className="navbar">
             <div className="header-box">
-                <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to="/" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
                     <h1 className="blog-title"> 
                         Zerbology
                     </h1>

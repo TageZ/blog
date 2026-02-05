@@ -29,6 +29,11 @@
     .blog-title{
       text-align: center;
       margin: 0;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: #3A6D8C;
+      }
     }
   }
 
@@ -45,6 +50,15 @@
 
       .link{
         margin: 0px 40px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        
+        &:hover {
+          background-color: rgba(58, 109, 140, 0.1);
+          color: #3A6D8C;
+        }
       }
     }
 
